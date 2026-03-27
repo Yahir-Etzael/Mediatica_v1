@@ -1,0 +1,440 @@
+:root {
+    --bg: #08151f;
+    --bg-soft: #102433;
+    --surface: rgba(9, 24, 36, 0.72);
+    --surface-strong: #102c40;
+    --line: rgba(173, 216, 255, 0.14);
+    --text: #eff7ff;
+    --muted: #a7bed0;
+    --accent: #62d0ff;
+    --accent-strong: #2da8d8;
+    --accent-warm: #ffb86c;
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(98, 208, 255, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 184, 108, 0.12), transparent 22%),
+        linear-gradient(160deg, #061019 0%, #08151f 45%, #0a2030 100%);
+    min-height: 100vh;
+}
+
+.portal-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.portal-shell {
+    width: min(1100px, 100%);
+    text-align: center;
+}
+
+.portal-kicker {
+    margin: 0 0 28px;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.82rem;
+    color: var(--accent);
+}
+
+.portal-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+}
+
+.portal-item {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+    opacity: 0.65;
+    color: var(--text);
+}
+
+.portal-item:hover {
+    transform: scale(1.08);
+    opacity: 1;
+}
+
+.portal-item strong {
+    display: block;
+    margin-top: 10px;
+}
+
+.portal-side {
+    min-width: 180px;
+    padding: 28px 18px;
+    border-radius: 24px;
+    border: 1px solid transparent;
+}
+
+.portal-side:hover {
+    border-color: var(--line);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.portal-center {
+    opacity: 1;
+    padding: 26px 34px;
+}
+
+.portal-center strong {
+    font-size: clamp(1.9rem, 4vw, 3.1rem);
+    letter-spacing: 0.04em;
+}
+
+.portal-logo {
+    width: 112px;
+    height: 112px;
+    margin: 0 auto 16px;
+    display: grid;
+    place-items: center;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(98, 208, 255, 0.28), rgba(255, 184, 108, 0.18));
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    font-weight: 800;
+    font-size: 1.05rem;
+}
+
+.portal-item-label {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.74rem;
+    color: var(--accent);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.hero,
+.page-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.hero {
+    padding: 24px 0 48px;
+}
+
+.topbar,
+.page-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+}
+
+.brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.brand-lockup h1,
+.page-title h1 {
+    margin: 0;
+    font-size: clamp(1.6rem, 2vw, 2.2rem);
+}
+
+.eyebrow,
+.section-tag,
+.card-label,
+.card-pill,
+.mini-label {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.76rem;
+    color: var(--accent);
+    margin: 0 0 8px;
+}
+
+.brand-badge,
+.logo-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, rgba(98, 208, 255, 0.25), rgba(255, 184, 108, 0.2));
+    border: 1px solid var(--line);
+    color: var(--text);
+    font-weight: 800;
+    box-shadow: var(--shadow);
+}
+
+.hero-content,
+.page-hero {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 28px;
+    align-items: stretch;
+    padding-top: 42px;
+}
+
+.hero-copy,
+.hero-card,
+.page-copy,
+.info-panel,
+.content-card,
+.brand-card,
+.timeline-item {
+    background: var(--surface);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+}
+
+.hero-copy,
+.page-copy {
+    padding: 42px;
+}
+
+.hero-copy h2,
+.page-copy h2 {
+    font-size: clamp(2.3rem, 4vw, 4.6rem);
+    line-height: 1.05;
+    margin: 0 0 18px;
+    max-width: 12ch;
+}
+
+.hero-actions,
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+    color: #04121b;
+    font-weight: 700;
+}
+
+.button-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+}
+
+.hero-card,
+.info-panel {
+    padding: 30px;
+}
+
+.check-list,
+.nav-links {
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.check-list li,
+.nav-links li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--text);
+}
+
+.check-list li:last-child,
+.nav-links li:last-child {
+    border-bottom: 0;
+}
+
+.section {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 0 56px;
+}
+
+.section-alt {
+    padding-bottom: 80px;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin-bottom: 26px;
+}
+
+.section-heading h3,
+.content-card h3 {
+    margin: 0 0 12px;
+    font-size: clamp(1.6rem, 2vw, 2.4rem);
+}
+
+.ecosystem-grid,
+.timeline-grid,
+.content-grid,
+.highlights-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.ecosystem-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.timeline-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.brand-card,
+.timeline-item,
+.content-card {
+    padding: 28px;
+}
+
+.brand-card h4,
+.timeline-item h4 {
+    margin: 10px 0 12px;
+    font-size: 1.3rem;
+}
+
+.brand-card a {
+    display: inline-flex;
+    margin-top: 18px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.featured {
+    background:
+        linear-gradient(160deg, rgba(98, 208, 255, 0.16), rgba(255, 184, 108, 0.08)),
+        var(--surface);
+}
+
+.timeline-item span {
+    display: inline-flex;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(98, 208, 255, 0.16);
+    color: var(--accent);
+    font-weight: 800;
+}
+
+.page-shell {
+    padding: 24px 0 64px;
+}
+
+.page-title p {
+    margin: 6px 0 0;
+}
+
+.page-copy {
+    min-height: 100%;
+}
+
+.page-copy h2 {
+    max-width: 14ch;
+}
+
+.content-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 26px;
+}
+
+.highlights-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 26px;
+}
+
+.highlight-box {
+    padding: 22px;
+    border-radius: 24px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.highlight-box h4 {
+    margin: 10px 0 10px;
+}
+
+.content-card p:last-child,
+.highlight-box p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 960px) {
+    .hero-content,
+    .page-hero,
+    .ecosystem-grid,
+    .timeline-grid,
+    .content-grid,
+    .highlights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-copy,
+    .hero-card,
+    .page-copy,
+    .info-panel,
+    .content-card,
+    .brand-card,
+    .timeline-item {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 640px) {
+    .portal-layout {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .portal-side,
+    .portal-center {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .topbar,
+    .page-topbar,
+    .brand-lockup {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-copy h2,
+    .page-copy h2 {
+        font-size: 2.2rem;
+    }
+
+    .button,
+    .button-ghost {
+        width: 100%;
+    }
+}
