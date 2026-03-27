@@ -133,6 +133,17 @@ body {
     font-size: 1.05rem;
 }
 
+.portal-logo-image {
+    padding: 12px;
+}
+
+.portal-logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
+}
+
 .portal-item-label {
     display: block;
     text-transform: uppercase;
